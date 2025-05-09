@@ -26,30 +26,6 @@ connection.then(function(){
 require("./assets/UsuarioSchema.js");
 const Usuarios= mongoose.model("Usuarios");
 
-require("./assets/TransporteSchema.js");
-const Transporte= mongoose.model("Transporte");
-
-require("./assets/AlimentacionSchema.js");
-const Alimentacion= mongoose.model("Alimentacion");
-
-require("./assets/AcademicoSchema.js");
-const Academico= mongoose.model("Academico");
-
-require("./assets/Metas_FinacierasSchema.js");
-const Metas_Financieras= mongoose.model("Metas_Financieras");
-
-require("./assets/SalidasSchema.js");
-const Salidas= mongoose.model("Salidas");
-
-require("./assets/SuscripcionesSchema.js");
-const Suscripciones= mongoose.model("Suscripciones");
-
-require("./assets/EconomicoSchema.js");
-const Economico= mongoose.model("Economico");
-
-require("./assets/TarjetaSchema.js");
-const Tarjeta= mongoose.model("Tarjeta");
-
 app.post("/registrar",async function(req,res){
     const { Nombre,Edad,Direccion,Identificacion,Correo,Contraseña} = req.body;
     const usuarioExistente = Usuarios.findOne({Correo});
